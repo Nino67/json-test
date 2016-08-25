@@ -1,10 +1,10 @@
 /* global cpdefine chilipeppr cprequire */
-cprequire_test(["inline:com-chilipeppr-workspace-sample"], function(ws) {
+cprequire_test(["inline:com-chilipeppr-workspace-json_test"], function(ws) {
 
     console.log("initting workspace");
 
     /**
-     * The Root workspace (when you see the ChiliPeppr Header) auto Loads the Flash 
+     * The Root workspace (when you see the ChiliPeppr Header) auto Loads the Flash
      * Widget so we can show the 3 second flash messages. However, in test mode we
      * like to see them as well, so just load it from the cprequire_test() method
      * so we have similar functionality when testing this workspace.
@@ -22,10 +22,10 @@ cprequire_test(["inline:com-chilipeppr-workspace-sample"], function(ws) {
         );
     };
     loadFlashMsg();
-        
+
     // Init workspace
     ws.init();
-    
+
     // Do some niceties for testing like margins on widget and title for browser
     $('title').html("Sample Workspace");
     $('body').css('padding', '10px');
@@ -67,14 +67,14 @@ cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], functio
             this.loadConsoleWidget(function() {
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
             });
-            
+
             this.loadTemplateWidget();
-            
+
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
             // Add our billboard to the menu (has name, url, picture of workspace)
             this.addBillboardToWorkspaceMenu();
-            
+
             // Setup an event to react to window resize. This helps since
             // some of our widgets have a manual resize to cleanly fill
             // the height of the browser window. You could turn this off and
@@ -163,7 +163,7 @@ cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], functio
                         //spjs.consoleToggle();
 
                         that.widgetSpjs - spjs;
-                        
+
                         if (callback) callback(spjs);
 
                     });
@@ -186,7 +186,7 @@ cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], functio
                             // Callback that is passed reference to your newly loaded widget
                             console.log("My Console widget just got loaded.", mywidget);
                             that.widgetConsole = mywidget;
-                            
+
                             // init the serial port console
                             // 1st param tells the console to use "single port mode" which
                             // means it will only show data for the green selected serial port
@@ -221,7 +221,7 @@ cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], functio
                             that,
                             "Workspace"
                         );
-                        
+
                         if (callback) callback();
                     });
                 }
